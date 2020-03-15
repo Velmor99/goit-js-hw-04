@@ -4,16 +4,19 @@ const inventory = {
 	items: [ 'Knife', 'Gas mask' ],
 	add(itemName) {
 		this.items.push(itemName);
+		console.log(invokeInventoryAction(itemName));
 		console.log(`Adding ${itemName} to inventory`);
 	},
 	remove(itemName) {
 		this.items = this.items.filter((item) => item !== itemName);
+		console.log(invokeInventoryAction(itemName));
 		console.log(`Removing ${itemName} from inventory`);
+		
 	}
 };
 
-const invokeInventoryAction = function(itemName, action) {
-	console.log(`Invoking action on ${itemName}`);
+const invokeInventoryAction = function(itemName) {
+	return (`Invoking action on ${itemName}`);
 };
 
 invokeInventoryAction('Medkit', inventory.add('Medkit'));
